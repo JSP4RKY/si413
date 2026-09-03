@@ -1,0 +1,94 @@
+# SI413 Lab 1.1: Spec for Just Strings language
+
+your_name: Jeongwon Park
+
+your_alpha: 274956
+
+# enter Y or N here. If it's a Y, then you must also turn in aichat.md
+used_ai: Y
+
+# describe any collaboration or help you got from classmates
+collaboration: |
+    Rachel - She helped me think of good brainrot terminology.
+
+# leave this as NONE for your initial submission
+changes_on_resubmit: |
+    Added more precise language to syntax and semantics section.
+    Created more direct example showcasing what I meant by spaces being the token boundary (I think I'm using this term incorrectly).
+    Clarified string literal expressions as being surrounded by double quotations.
+    Created clarifying example code to showcase the difference between rizz and rizzler.
+
+# optionally, fill this in with anything you'd like to share with your instructor
+any_other_comments_for_me: |
+    NONE
+
+# Task 1
+
+language_name: Brainrot
+
+# Task 2
+
+example_program: |
+    braindump "What is your name?"
+    braindump "Hello /rizz" c|_| rizzler includes trailing newline
+    braindump "Enter a noun and an adjective:"
+    braindump "/rizz.unoReverse is not /rizz"
+
+    c|_| Read in a string and add a 'z' with space
+    braindump "/rizz z"
+    c|_| The space after braindump signifies that the following string literal is what needs to be printed.
+
+    c|_| Read in a string and add a 'z' without space
+    braindump "/rizzz"
+    c|_| The 3rd z is simply the character 'z' as the method rizz has been fully written with the in-line method call notation.
+
+    c|_| rizz vs rizzler
+    braindump "Hello /rizz" c|_| If user input is 'bob\r\n', output is: Hello bob
+    braindump "Hello /rizzler"
+    c|_| If user input is 'bob\r\n'
+    c|_| output is: Hello bob
+    c|_| (Empty line of space due to the trailing newline)
+    
+# Task 3
+
+language_syntax: |
+    In-line method calls will be notated with a /-prefix.
+    When 2 or more method calls are called in tandem, periods will be used to separate them.
+    An expression can be composed of any of the 95 ASCII printable characters.
+    Spaces act as explicit token boundaries, unless they are within quotations.
+    A statement is an expression that ends with a physical newline.
+    A program is a sequence of one or more statements.
+    
+    The built in methods are: rizz, rizzler, braindump, and unoReverse.
+    
+language_semantics: |
+    When 2 or more method calls are called in tandem, they will apply from left to right order.
+    All string literals in an statement will be concatenated.
+    The program will ignore all expressions following c|_| until a physical new line.
+    braindump will print all following string literals.
+    rizz will read a single line of text from the console as a string without including any trailing newlines.
+    rizzler will read a single line of text from the console as a string and include any trailing newlines.
+    unoReverse will take any string expression and produce a new string with the same characters in reverse order.
+    Within a string literal, the program will see =>> as an "escape" (i.e. the character following it will be considered a string literal).
+    
+    Spaces within quotations are to be taken as literal spaces.
+    All expressions must be surrounded by double quotations (") will be understood as string literals [see example code].
+
+# Task 4
+
+reviewed_by: The Luc Garrett & Rachel Miller
+
+review_passed: Y
+
+reviewer_comments: <
+    Frankly this code is really efficient and easy to understand. This genuinely helped me better write my own lab which I really appreciated.
+    The brainrot theme was slightly cringey, however, I understand that creativity is a burden at times.
+    You do a good job at appropriately using terminology such as literals, expressions, and statements.
+    Your code was a little difficult to decipher at first given the unique nature of the syntax. However, with the 
+    syntax I feel as though I could write a program in this very sophisticated language. 
+
+    Rachel's Feedback
+    (1) Language semantics, line 4 - when you say "will ignore all expressions following c|_|",
+        I think you should specify until the end of the line. Because literally, I would interpret that as 
+        "the program will ignore every single thing after c|_|" like using just /* in java and not closing it.
+    (2) Do you have any sort of escape character? how would you be able to print a parenthesis inside a string literal?
