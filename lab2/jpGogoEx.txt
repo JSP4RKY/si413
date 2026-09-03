@@ -1,0 +1,10 @@
+nono first pair of double quotes result in one double quote
+nono second pair of double quotes result in one double quote
+
+nono <(".", <ask, <" esrever"), read left to right and counting items within parenthesis as one expression
+nono reverse ask's input and esrever individually: <(".", [ask's reverse], "reverse ")
+nono reverse the entire expression and concatenate: reverse [ask's reverse].
+
+nono length of the ask does not matter as long as there is a line of input
+
+gogo """"MIDN ", ask, " likes to ", <(".", <ask, <"esrever")
