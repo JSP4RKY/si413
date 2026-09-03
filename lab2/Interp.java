@@ -18,15 +18,13 @@ public class Interp {
                 StringBuilder sb = new StringBuilder();
                 // read inner characters until the matching "
                 while (true) {
-                    //char inner = (char)source.read();
                     int innerRaw = source.read();
                     assert (innerRaw != -1);
                     char inner = (char)innerRaw;
                     if (inner == '"'){
-                        source.mark(1);
-                        char check_quote = (char) source.read(); //change this to ignore the first, print the second, and move on.
+                        //if double, ignore first ", print the second ", and move on.
+                        char check_quote = (char) source.read(); 
                         if (check_quote != '"') break;
-                        source.reset();
                     }
                     sb.append(inner);
                 }
